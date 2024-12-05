@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Integration Tests</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        #testResults {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 1.5;
+            margin-top: 1.5rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .success {
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+            background: #fff5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Supabase Integration Tests</h1>
+        <div id="testResults">Initializing tests...</div>
+    </div>
+
+    <script type="module" src="js/supabase-config.js"></script>
+    <script type="module" src="js/test.js"></script>
+    <script>
+        // Capture console output
+        const testResults = document.getElementById('testResults');
+        const originalConsole = {
+            log: console.log,
+            error: console.error
+        };
+
+        console.log = function() {
+            const message = Array.from(arguments).join(' ');
+            testResults.innerHTML += message + '\n';
+            originalConsole.log.apply(console, arguments);
+        };
+
+        console.error = function() {
+            const message = Array.from(arguments).join(' ');
+            testResults.innerHTML += `<span class="error">${message}</span>\n`;
+            originalConsole.error.apply(console, arguments);
+        };
+    </script>
+</body>
+</html>

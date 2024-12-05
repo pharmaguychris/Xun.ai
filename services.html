@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call - Xun | No-Code Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Calendly integration -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="services.html">Book a Call</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="container">
+            <h1>Schedule a Consultation</h1>
+            <p class="section-subtitle">Let's discuss how no-code solutions can transform your business</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-info">
+                    <h2>Why Book a Call?</h2>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Personalized no-code solution strategy</li>
+                        <li><i class="fas fa-check"></i> Expert guidance on tool selection</li>
+                        <li><i class="fas fa-check"></i> Custom automation workflows</li>
+                        <li><i class="fas fa-check"></i> AI integration consultation</li>
+                    </ul>
+                    <div class="pricing-info">
+                        <h3>Consultation Packages</h3>
+                        <div class="price-cards">
+                            <div class="price-card">
+                                <h4>30-Minute Discovery</h4>
+                                <p class="price">Free</p>
+                                <p>Initial discussion to understand your needs</p>
+                                <button onclick="openCalendly('30min')" class="cta-button">Book Discovery Call</button>
+                            </div>
+                            <div class="price-card featured">
+                                <h4>60-Minute Strategy</h4>
+                                <p class="price">$150</p>
+                                <p>Deep dive into your project requirements</p>
+                                <button onclick="openCalendly('60min')" class="cta-button">Book Strategy Call</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendly-container" id="calendly-widget">
+                    <!-- Calendly inline widget will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Xun | No-Code Expert. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openCalendly(duration) {
+            // Replace 'your_calendly_username' with your actual Calendly username
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/your_calendly_username/' + duration,
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="transitions.js"></script>
+</body>
+</html>

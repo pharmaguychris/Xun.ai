@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xun | No-Code Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+        }
+        #scene-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="services.html">Book a Call</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="canvas-container">
+            <div id="scene-container"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text-container">
+                <h1 class="split-text" data-aos="fade-up">Build Without Code</h1>
+                <p class="hero-subtitle split-text" data-aos="fade-up" data-aos-delay="100">Transform Your Ideas into Reality with No-Code Solutions</p>
+                <a href="services.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm Xun, a no-code expert passionate about helping individuals and businesses build powerful applications without writing a single line of code. With expertise in various no-code platforms and AI tools, I enable you to bring your ideas to life faster and more efficiently than ever before.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>No-Code Development</h3>
+                    <p>Build custom applications and workflows without coding</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Integration</h3>
+                    <p>Implement AI solutions using no-code tools</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Consultation</h3>
+                    <p>One-on-one guidance for your no-code journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="schedule-grid">
+                <div class="schedule-content">
+                    <h2 class="schedule-title">Build with No-Code</h2>
+                    <p class="schedule-subtitle">Transform your ideas into reality, without writing a single line of code</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">🚀</span>
+                            <div class="feature-text">
+                                <h3>Rapid Development</h3>
+                                <p>Launch your project in days, not months</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💡</span>
+                            <div class="feature-text">
+                                <h3>Custom Solutions</h3>
+                                <p>Tailored to your specific needs</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🛠️</span>
+                            <div class="feature-text">
+                                <h3>No Code Required</h3>
+                                <p>Technical expertise handled for you</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="schedule-cta">
+                        <span class="cta-text">Book a Consultation</span>
+                        <span class="cta-icon">📅</span>
+                        <div class="cta-shine"></div>
+                    </a>
+                </div>
+                
+                <div class="schedule-visual">
+                    <div class="visual-card">
+                        <div class="card-blob"></div>
+                        <div class="card-content">
+                            <div class="card-icon">⚡</div>
+                            <h3>Expert Consultation</h3>
+                            <p>Schedule a 30-minute professional consultation to kickstart your project</p>
+                            <div class="pricing-badge">$99 / 30 min</div>
+                            <ul class="card-benefits">
+                                <li>✓ Project scope discussion</li>
+                                <li>✓ Timeline estimation</li>
+                                <li>✓ Cost breakdown</li>
+                                <li>✓ Technology recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="reviews-carousel-container">
+                <div class="reviews-track" id="reviewsGrid">
+                    <!-- Reviews will be loaded dynamically -->
+                </div>
+            </div>
+            <div class="review-cta">
+                <button id="writeReviewBtn" class="write-review-btn">
+                    <span class="btn-icon">✏️</span>
+                    Write a Review
+                </button>
+            </div>
+            <div id="reviewFormModal" class="review-form-modal">
+                <div class="modal-content">
+                    <button class="close-modal" id="closeReviewForm">&times;</button>
+                    <div class="review-form-container">
+                        <h3>Share Your Experience</h3>
+                        <form id="reviewForm" class="review-form">
+                            <div class="form-group">
+                                <label for="reviewName">Name</label>
+                                <input type="text" id="reviewName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewRating">Rating</label>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5" required>
+                                    <label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1">★</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewText">Your Review</label>
+                                <textarea id="reviewText" name="text" required placeholder="Tell us about your experience..."></textarea>
+                            </div>
+                            <button type="submit" class="btn">
+                                <span class="btn-icon">📝</span>
+                                Submit Review
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>hello@xun.ai</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>Social</h3>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a href="https://github.com/pharmaguychris" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🌍</div>
+                        <h3>Location</h3>
+                        <p>San Francisco, CA</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-header">
+                            <h3>Send a Message</h3>
+                            <p>I'll get back to you as soon as possible.</p>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" id="contactName" name="name" required>
+                                <label for="contactName">Your Name</label>
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="email" id="contactEmail" name="email" required>
+                                <label for="contactEmail">Your Email</label>
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" id="contactSubject" name="subject" required>
+                                <label for="contactSubject">Subject</label>
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <textarea id="contactMessage" name="message" required></textarea>
+                                <label for="contactMessage">Your Message</label>
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon">📤</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Xun | No-Code Expert. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/supabase-config.js"></script>
+    <script type="module" src="js/supabase-service.js"></script>
+    <script type="module" src="js/contact.js"></script>
+    <script type="module" src="js/reviews.js"></script>
+    <script src="script.js"></script>
+    <script src="transitions.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="3d-background.js"></script>
+</body>
+</html>

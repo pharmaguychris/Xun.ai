@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Xun.ai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .admin-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .admin-nav button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .admin-nav button.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .admin-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .status-new {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .status-read {
+            color: #6c757d;
+        }
+
+        .action-btn {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+
+        .edit-btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        .blog-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 800px;
+        }
+
+        .blog-form input,
+        .blog-form textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .blog-form textarea {
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logoutBtn" class="action-btn">Logout</button>
+        </div>
+
+        <div class="admin-nav">
+            <button class="active" data-tab="contacts">Contact Submissions</button>
+            <button data-tab="blog">Blog Posts</button>
+            <button data-tab="reviews">Reviews</button>
+        </div>
+
+        <div class="admin-content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script type="module" src="js/supabase-config.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

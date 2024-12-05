@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Xun | No-Code Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="services.html">Book a Call</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1>No-Code AI Daily</h1>
+            <p class="section-subtitle">Latest insights, tips, and news from the no-code AI world</p>
+        </div>
+    </section>
+
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-grid" id="blog-posts">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+            <div class="blog-pagination">
+                <button id="load-more" class="cta-button">Load More Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Xun | No-Code Expert. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="transitions.js"></script>
+    <script>
+        // Sample blog posts data - Replace with your actual blog post data or API
+        const blogPosts = [
+            {
+                title: "Top 10 No-Code AI Tools for 2023",
+                date: "October 15, 2023",
+                excerpt: "Discover the most powerful no-code AI tools that are revolutionizing how we build applications...",
+                image: "https://via.placeholder.com/400x250",
+                tag: "Tools"
+            },
+            {
+                title: "Building an AI Chatbot Without Code",
+                date: "October 12, 2023",
+                excerpt: "Learn how to create your own AI-powered chatbot using popular no-code platforms...",
+                image: "https://via.placeholder.com/400x250",
+                tag: "Tutorial"
+            },
+            {
+                title: "The Future of No-Code Development",
+                date: "October 10, 2023",
+                excerpt: "Exploring how AI is shaping the future of no-code development and what it means for businesses...",
+                image: "https://via.placeholder.com/400x250",
+                tag: "Insights"
+            }
+        ];
+
+        function createBlogPost(post) {
+            return `
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="${post.image}" alt="${post.title}">
+                        <span class="blog-tag">${post.tag}</span>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date">${post.date}</p>
+                        <h2>${post.title}</h2>
+                        <p>${post.excerpt}</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            `;
+        }
+
+        function loadBlogPosts() {
+            const blogContainer = document.getElementById('blog-posts');
+            blogPosts.forEach(post => {
+                blogContainer.innerHTML += createBlogPost(post);
+            });
+        }
+
+        // Load initial blog posts
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
+</body>
+</html>

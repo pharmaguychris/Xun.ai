@@ -1,0 +1,447 @@
+.blog-section, .blog-page {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.blog-header {
+    position: relative;
+    text-align: center;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.blog-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://picsum.photos/1920/1080?random=1') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.blog-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.blog-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease;
+}
+
+.blog-header p {
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease;
+}
+
+.blog-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleFade 0.5s ease-in;
+}
+
+.blog-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.2s ease;
+}
+
+.category-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #2d3436;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: #f8f9fa;
+}
+
+.category-btn.active {
+    background: #2d3436;
+    color: white;
+    box-shadow: 0 4px 15px rgba(45,52,54,0.3);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1.4s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(45, 52, 54, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.post-title {
+    color: #2d3436;
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .post-title {
+    color: #636e72;
+}
+
+.post-excerpt {
+    color: #636e72;
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #b2bec3;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: #2d3436;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+.featured-post {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+}
+
+.featured-post .card-image {
+    height: 100%;
+    min-height: 400px;
+}
+
+.featured-post .card-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-post h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.featured-post p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.no-posts h3 {
+    color: #2d3436;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.no-posts p {
+    color: #636e72;
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-cta {
+    text-align: center;
+    margin-top: 60px;
+    animation: fadeInUp 1.6s ease;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 35px;
+    background: #2d3436;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.view-all-btn .btn-icon {
+    margin-left: 12px;
+    font-size: 1.3rem;
+}
+
+.view-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    background: #636e72;
+}
+
+.article-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.article-link:hover {
+    color: #007bff;
+}
+
+.blog-card:target {
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: rgba(0, 123, 255, 0.1);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Admin Controls */
+.post-admin-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover .post-admin-controls {
+    opacity: 1;
+}
+
+.post-admin-controls a,
+.post-admin-controls button {
+    background: rgba(45, 52, 54, 0.9);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    pointer-events: auto;
+}
+
+.post-admin-controls .edit-post {
+    background: rgba(46, 204, 113, 0.9);
+}
+
+.post-admin-controls .edit-post:hover {
+    background: rgba(39, 174, 96, 1);
+}
+
+.post-admin-controls .delete-post {
+    background: rgba(231, 76, 60, 0.9);
+}
+
+.post-admin-controls .delete-post:hover {
+    background: rgba(192, 57, 43, 1);
+}
+
+@media (max-width: 1200px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-post .card-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .blog-header {
+        padding: 100px 0 60px;
+    }
+    
+    .blog-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .blog-header p {
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+    
+    .category-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .card-content {
+        padding: 25px;
+    }
+    
+    .featured-post .card-content {
+        padding: 30px;
+    }
+    
+    .featured-post h3 {
+        font-size: 1.8rem;
+    }
+}

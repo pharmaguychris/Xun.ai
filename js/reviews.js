@@ -27,10 +27,11 @@ let SCROLL_SPEED = 0.15;
 let originalCards = [];
 let isResetting = false;
 let animationFrameId = null;
+let isAnimationPaused = false;
 
 function manageInfiniteScroll() {
     const track = document.querySelector('.reviews-track');
-    if (!track || isResetting) return;
+    if (!track || isResetting || isAnimationPaused) return;
 
     const cards = track.children;
     if (cards.length === 0) return;
@@ -42,20 +43,7 @@ function manageInfiniteScroll() {
 
     // When we've scrolled one full set width
     if (Math.abs(scrollPosition) >= totalWidth) {
-        isResetting = true;
-        // Smoothly transition back to start
-        requestAnimationFrame(() => {
-            track.style.transition = 'none';
-            scrollPosition += totalWidth;
-            track.style.transform = `translateX(${scrollPosition}px)`;
-            
-            // Force browser reflow
-            track.offsetHeight;
-            
-            // Restore transition
-            track.style.transition = 'transform 0.1s linear';
-            isResetting = false;
-        });
+        scrollPosition = 0; // Reset to start immediately
     }
 
     track.style.transform = `translateX(${scrollPosition}px)`;
@@ -67,10 +55,12 @@ function stopAnimation() {
         cancelAnimationFrame(animationFrameId);
         animationFrameId = null;
     }
+    isAnimationPaused = true;
 }
 
 function startAnimation() {
     if (!animationFrameId) {
+        isAnimationPaused = false;
         scrollPosition = 0;
         animationFrameId = requestAnimationFrame(manageInfiniteScroll);
     }
@@ -79,7 +69,7 @@ function startAnimation() {
 // Function to load reviews
 async function loadReviews() {
     console.log('Loading reviews...');
-    const reviewsTrack = document.getElementById('reviewsGrid');
+    const reviewsTrack = document.querySelector('.reviews-track');
     if (!reviewsTrack) {
         console.error('Reviews track element not found!');
         return;
@@ -145,6 +135,7 @@ function initReviews() {
     const modal = document.getElementById('reviewFormModal');
     const writeReviewBtn = document.getElementById('writeReviewBtn');
     const closeModalBtn = document.getElementById('closeReviewForm');
+    const reviewsContainer = document.querySelector('.reviews-carousel-container');
 
     if (reviewForm && modal && writeReviewBtn && closeModalBtn) {
         console.log('Review form and modal elements found, setting up handlers');
@@ -228,14 +219,9 @@ function initReviews() {
     }
 
     // Pause scrolling when hovering over reviews
-    const reviewsContainer = document.querySelector('.reviews-carousel-container');
     if (reviewsContainer) {
-        reviewsContainer.addEventListener('mouseenter', () => {
-            SCROLL_SPEED = 0;
-        });
-        reviewsContainer.addEventListener('mouseleave', () => {
-            SCROLL_SPEED = 0.15;
-        });
+        reviewsContainer.addEventListener('mouseenter', stopAnimation);
+        reviewsContainer.addEventListener('mouseleave', startAnimation);
     }
 }
 

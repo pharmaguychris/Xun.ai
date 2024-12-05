@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Xun | No-Code Expert</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,100 +16,179 @@
             <a href="index.html" class="logo-link">
                 <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="services.html">Book a Call</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#schedule">Schedule</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <section class="blog-hero">
-        <div class="container">
-            <h1>No-Code AI Daily</h1>
-            <p class="section-subtitle">Latest insights, tips, and news from the no-code AI world</p>
-        </div>
-    </section>
-
-    <section class="blog-content">
-        <div class="container">
-            <div class="blog-grid" id="blog-posts">
-                <!-- Blog posts will be dynamically loaded here -->
+    <main class="blog-page">
+        <header class="blog-header">
+            <div class="container">
+                <h1>Insights & Stories</h1>
+                <p>Explore the latest trends in no-code development, AI tools, and startup success stories from our journey</p>
             </div>
-            <div class="blog-pagination">
-                <button id="load-more" class="cta-button">Load More Posts</button>
+        </header>
+
+        <div class="container">
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="projects">New Projects</button>
+                <button class="category-btn" data-category="startup">Startup Stories</button>
+                <button class="category-btn" data-category="ai-tools">AI Tools</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card featured-post" data-category="ai-tools" id="future-nocode">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/800/600?random=7" alt="Featured post">
+                        <div class="card-category">Featured</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>The Future of No-Code: AI-Powered Development</h3>
+                        <p>Discover how artificial intelligence is revolutionizing the no-code development landscape and empowering creators to build more sophisticated applications than ever before.</p>
+                        <div class="card-meta">
+                            <span class="date">June 20, 2023</span>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="projects" id="ecommerce-platform">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=8" alt="Project showcase">
+                        <div class="card-category">New Project</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Building an E-commerce Platform with No-Code Tools</h3>
+                        <p>Step-by-step guide to creating a fully functional e-commerce platform using popular no-code tools.</p>
+                        <div class="card-meta">
+                            <span class="date">June 18, 2023</span>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="startup" id="growth-story">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=9" alt="Startup story">
+                        <div class="card-category">Startup Story</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>From Solo Founder to Team of 10: A Growth Story</h3>
+                        <p>Learn how we scaled our no-code development agency and the lessons learned along the way.</p>
+                        <div class="card-meta">
+                            <span class="date">June 16, 2023</span>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="ai-tools" id="ai-powered-analytics">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=10" alt="AI tools">
+                        <div class="card-category">AI Tools</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>AI-Powered Analytics for No-Code Apps</h3>
+                        <p>Implementing advanced analytics in your no-code applications using AI tools.</p>
+                        <div class="card-meta">
+                            <span class="date">June 14, 2023</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="projects" id="saas-dashboard">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=11" alt="Project showcase">
+                        <div class="card-category">New Project</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Creating a SaaS Dashboard with No-Code</h3>
+                        <p>A comprehensive guide to building a professional SaaS dashboard without coding.</p>
+                        <div class="card-meta">
+                            <span class="date">June 12, 2023</span>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="startup" id="bootstrapping-startup">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=12" alt="Startup success">
+                        <div class="card-category">Startup Story</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bootstrapping a No-Code Startup</h3>
+                        <p>How we built and launched our startup using only no-code tools and a limited budget.</p>
+                        <div class="card-meta">
+                            <span class="date">June 10, 2023</span>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2023 Xun | No-Code Expert. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                <div class="footer-section">
+                    <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+                    <p>Empowering creators with no-code solutions</p>
                 </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#schedule">Schedule</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xun.ai. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script src="transitions.js"></script>
-    <script>
-        // Sample blog posts data - Replace with your actual blog post data or API
-        const blogPosts = [
-            {
-                title: "Top 10 No-Code AI Tools for 2023",
-                date: "October 15, 2023",
-                excerpt: "Discover the most powerful no-code AI tools that are revolutionizing how we build applications...",
-                image: "https://via.placeholder.com/400x250",
-                tag: "Tools"
-            },
-            {
-                title: "Building an AI Chatbot Without Code",
-                date: "October 12, 2023",
-                excerpt: "Learn how to create your own AI-powered chatbot using popular no-code platforms...",
-                image: "https://via.placeholder.com/400x250",
-                tag: "Tutorial"
-            },
-            {
-                title: "The Future of No-Code Development",
-                date: "October 10, 2023",
-                excerpt: "Exploring how AI is shaping the future of no-code development and what it means for businesses...",
-                image: "https://via.placeholder.com/400x250",
-                tag: "Insights"
-            }
-        ];
-
-        function createBlogPost(post) {
-            return `
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="${post.image}" alt="${post.title}">
-                        <span class="blog-tag">${post.tag}</span>
-                    </div>
-                    <div class="blog-content">
-                        <p class="blog-date">${post.date}</p>
-                        <h2>${post.title}</h2>
-                        <p>${post.excerpt}</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            `;
-        }
-
-        function loadBlogPosts() {
-            const blogContainer = document.getElementById('blog-posts');
-            blogPosts.forEach(post => {
-                blogContainer.innerHTML += createBlogPost(post);
-            });
-        }
-
-        // Load initial blog posts
-        document.addEventListener('DOMContentLoaded', loadBlogPosts);
-    </script>
+    <script type="module" src="js/blog.js"></script>
 </body>
 </html>

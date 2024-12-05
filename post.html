@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Xun.ai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#schedule">Schedule</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="post-detail">
+        <article class="post-content">
+            <div class="post-header">
+                <div class="container">
+                    <div class="post-meta">
+                        <span class="category"></span>
+                        <span class="date"></span>
+                        <span class="read-time"></span>
+                    </div>
+                    <h1 class="post-title"></h1>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="admin-controls">
+                    <button class="edit-post-btn">
+                        <i class="fas fa-edit"></i> Edit Post
+                    </button>
+                    <button class="delete-post-btn">
+                        <i class="fas fa-trash"></i> Delete Post
+                    </button>
+                </div>
+
+                <div class="post-image">
+                    <img src="" alt="">
+                </div>
+                
+                <div class="post-body"></div>
+
+                <section class="comments-section">
+                    <h3>Comments</h3>
+                    <div class="comment-form">
+                        <h4>Leave a Comment</h4>
+                        <form id="commentForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email (will not be published)</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Comment</label>
+                                <textarea id="comment" name="comment" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-comment">Post Comment</button>
+                        </form>
+                    </div>
+
+                    <div class="comments-list">
+                        <!-- Comments will be loaded here -->
+                    </div>
+                </section>
+
+                <div class="post-footer">
+                    <div class="share-buttons">
+                        <h4>Share this post</h4>
+                        <div class="social-share">
+                            <button class="share-btn twitter">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </button>
+                            <button class="share-btn linkedin">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </button>
+                            <button class="share-btn facebook">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="post-navigation">
+                        <a href="blog.html" class="back-to-blog">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+                    <p>Empowering creators with no-code solutions</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#schedule">Schedule</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xun.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/post.js"></script>
+</body>
+</html>

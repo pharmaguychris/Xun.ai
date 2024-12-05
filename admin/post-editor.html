@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Editor - Xun.ai</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Back to Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <div class="container">
+            <h1>Create New Blog Post</h1>
+            
+            <form id="blogPostForm" class="post-form">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <div class="input-with-button">
+                        <input type="text" id="title" name="title" required placeholder="Enter post title">
+                        <button type="button" id="generateContent" class="ai-button">
+                            <i class="fas fa-magic"></i> Generate with AI
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ai-options" id="aiOptions" style="display: none;">
+                    <div class="form-group">
+                        <label>AI Generation Options</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="generateImage" checked>
+                                Generate Featured Image
+                            </label>
+                            <label>
+                                <input type="checkbox" id="generateExcerpt" checked>
+                                Generate Excerpt
+                            </label>
+                            <label>
+                                <input type="checkbox" id="generateFullPost" checked>
+                                Generate Full Post
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contentStyle">Writing Style</label>
+                        <select id="contentStyle">
+                            <option value="professional">Professional</option>
+                            <option value="casual">Casual & Friendly</option>
+                            <option value="technical">Technical & Detailed</option>
+                            <option value="storytelling">Storytelling</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="projects">New Projects</option>
+                        <option value="startup">Startup Stories</option>
+                        <option value="ai-tools">AI Tools</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="readTime">Read Time (minutes)</label>
+                    <input type="number" id="readTime" name="readTime" required min="1" placeholder="e.g., 5">
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Featured Image URL</label>
+                    <input type="url" id="image" name="image" required placeholder="https://example.com/image.jpg">
+                    <small>Recommended size: 600x400 pixels</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="excerpt">Excerpt</label>
+                    <textarea id="excerpt" name="excerpt" required rows="3" placeholder="Brief description of the post"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" required rows="15" placeholder="Write your blog post content here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="featured" name="featured">
+                        Mark as Featured Post
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">Publish Post</button>
+                    <button type="button" class="secondary-button" id="saveDraft">Save as Draft</button>
+                </div>
+            </form>
+
+            <div id="preview" class="post-preview">
+                <h2>Preview</h2>
+                <div class="preview-content">
+                    <!-- Preview will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="post-editor.js"></script>
+</body>
+</html>

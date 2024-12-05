@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xun | No-Code Expert</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/reviews.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -46,26 +47,22 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Xun.ai</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#schedule">Build with No-Code</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="services.html">Book a Call</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <section id="home" class="hero">
         <div class="canvas-container">
@@ -174,11 +171,87 @@
         </div>
     </section>
 
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="blog-title">Latest Insights</h2>
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="projects">New Projects</button>
+                <button class="category-btn" data-category="startup">Startup Stories</button>
+                <button class="category-btn" data-category="ai-tools">AI Tools</button>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card" data-category="ai-tools">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=7" alt="Featured post">
+                        <div class="card-category">AI Tools</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="blog.html#future-nocode" class="article-link">The Future of No-Code: AI-Powered Development</a></h3>
+                        <p>Discover how artificial intelligence is revolutionizing the no-code development landscape and empowering creators to build more sophisticated applications than ever before.</p>
+                        <div class="card-meta">
+                            <span class="date">June 20, 2023</span>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                        <a href="blog.html#future-nocode" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="projects">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=8" alt="Project showcase">
+                        <div class="card-category">New Project</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="blog.html#ecommerce-platform" class="article-link">Building an E-commerce Platform with No-Code Tools</a></h3>
+                        <p>Step-by-step guide to creating a fully functional e-commerce platform using popular no-code tools.</p>
+                        <div class="card-meta">
+                            <span class="date">June 18, 2023</span>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                        <a href="blog.html#ecommerce-platform" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="startup">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/600/400?random=9" alt="Startup story">
+                        <div class="card-category">Startup Story</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="blog.html#growth-story" class="article-link">From Solo Founder to Team of 10: A Growth Story</a></h3>
+                        <p>Learn how we scaled our no-code development agency and the lessons learned along the way.</p>
+                        <div class="card-meta">
+                            <span class="date">June 16, 2023</span>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                        <a href="blog.html#growth-story" class="read-more">
+                            Read More
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="view-all-btn">
+                    View All Posts
+                    <span class="btn-icon">📚</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="reviews" class="reviews">
         <div class="container">
             <h2>What Our Clients Say</h2>
             <div class="reviews-carousel-container">
-                <div class="reviews-track" id="reviewsGrid">
+                <div class="reviews-track">
                     <!-- Reviews will be loaded dynamically -->
                 </div>
             </div>
@@ -215,11 +288,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="reviewText">Your Review</label>
-                                <textarea id="reviewText" name="text" required placeholder="Tell us about your experience..."></textarea>
+                                <textarea id="reviewText" name="text" required></textarea>
                             </div>
-                            <button type="submit" class="btn">
-                                <span class="btn-icon">📝</span>
-                                Submit Review
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Submit Review</span>
+                                <span class="btn-icon">✨</span>
                             </button>
                         </form>
                     </div>
@@ -314,6 +387,7 @@
     <script type="module" src="js/supabase-service.js"></script>
     <script type="module" src="js/contact.js"></script>
     <script type="module" src="js/reviews.js"></script>
+    <script type="module" src="js/blog.js"></script>
     <script src="script.js"></script>
     <script src="transitions.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -321,6 +395,5 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="3d-background.js"></script>
-    <script src="js/mobile-nav.js" type="module"></script>
 </body>
 </html>

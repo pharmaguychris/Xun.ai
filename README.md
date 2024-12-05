@@ -2,6 +2,8 @@
 
 A modern, interactive personal portfolio website showcasing no-code expertise and professional services.
 
+🌐 **Live Site**: [https://pharmaguychris.github.io/Xun.ai/](https://pharmaguychris.github.io/Xun.ai/)
+
 ## Features
 
 - Modern, responsive design
@@ -36,6 +38,16 @@ A modern, interactive personal portfolio website showcasing no-code expertise an
 1. Clone the repository
 2. Open index.html in your browser
 3. Configure Supabase connection in js/supabase-config.js
+
+## Development
+
+The site is hosted using GitHub Pages. The main development branch is `master`, and the deployment branch is `gh-pages`.
+
+To deploy updates:
+1. Make changes in the `master` branch
+2. Merge changes into `gh-pages` branch
+3. Push to GitHub
+4. Site will automatically update
 
 ## Contact
 

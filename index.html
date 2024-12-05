@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Xun | No-Code Expert</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/reviews.css">
@@ -46,22 +46,26 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo-link">
-                <div class="logo">Xun<span class="ai-suffix">.ai</span></div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="services.html">Book a Call</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Xun.ai</a>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#schedule">Build with No-Code</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <section id="home" class="hero">
         <div class="canvas-container">
@@ -317,5 +321,6 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="3d-background.js"></script>
+    <script src="js/mobile-nav.js" type="module"></script>
 </body>
 </html>
